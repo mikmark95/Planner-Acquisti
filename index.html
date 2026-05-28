@@ -3,31 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Piano Acquisti Uomo</title>
+  <title>Piano Acquisti — Buyer Planner</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="app">
+
+    <!-- ── Sidebar ── -->
     <aside class="sidebar">
-      <h1>Planner Acquisti</h1>
+      <div class="sidebar-brand">
+        <div class="logo-text">Buyer<br>Planner</div>
+        <div class="logo-sub">Gestione Acquisti Moda</div>
+      </div>
+
+      <div id="sidebarSeason" class="sidebar-season">— Campagna</div>
+
       <nav>
-        <button data-tab="dashboard" class="tab-btn active">Dashboard</button>
-        <button data-tab="settings" class="tab-btn">Budget & Campagna</button>
-        <button data-tab="brands" class="tab-btn">Brand</button>
-        <button data-tab="items" class="tab-btn">Articoli</button>
-        <button data-tab="history" class="tab-btn">Storico</button>
-        <button data-tab="plan" class="tab-btn">Piano acquisti</button>
-        <button data-tab="suggestions" class="tab-btn">Suggerimenti</button>
-        <button data-tab="backup" class="tab-btn">Import / Export</button>
+        <div class="nav-label">Principale</div>
+        <button data-tab="dashboard" class="tab-btn active">
+          <span class="tab-icon">◈</span> Dashboard
+        </button>
+        <button data-tab="plan" class="tab-btn">
+          <span class="tab-icon">◉</span> Piano Acquisti
+        </button>
+        <button data-tab="suggestions" class="tab-btn">
+          <span class="tab-icon">◇</span> Analisi & Alert
+        </button>
+
+        <div class="nav-label">Gestione</div>
+        <button data-tab="brands" class="tab-btn">
+          <span class="tab-icon">▣</span> Brand
+        </button>
+        <button data-tab="items" class="tab-btn">
+          <span class="tab-icon">▤</span> Articoli
+        </button>
+        <button data-tab="history" class="tab-btn">
+          <span class="tab-icon">◳</span> Storico
+        </button>
+
+        <div class="nav-label">Sistema</div>
+        <button data-tab="settings" class="tab-btn">
+          <span class="tab-icon">◎</span> Budget & Campagna
+        </button>
+        <button data-tab="backup" class="tab-btn">
+          <span class="tab-icon">⊡</span> Import / Export
+        </button>
       </nav>
+
       <div class="side-actions">
-        <button id="toggleTheme">Dark/Light</button>
-        <button id="saveBtn">Salva dati</button>
-        <button id="resetBtn" class="danger">Reset dati</button>
+        <button id="toggleTheme">⬡ Dark / Light</button>
+        <button id="saveBtn">↓ Salva dati</button>
+        <button id="resetBtn" class="danger">✕ Reset dati</button>
       </div>
     </aside>
 
+    <!-- ── Content ── -->
     <main class="content">
       <section id="dashboard" class="tab active"></section>
       <section id="settings" class="tab"></section>
@@ -38,16 +69,8 @@
       <section id="suggestions" class="tab"></section>
       <section id="backup" class="tab"></section>
     </main>
+
   </div>
-
-  <template id="cardTemplate">
-    <article class="card">
-      <h3></h3>
-      <p class="value"></p>
-      <small></small>
-    </article>
-  </template>
-
   <script src="app.js"></script>
 </body>
 </html>
